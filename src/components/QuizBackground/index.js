@@ -10,7 +10,8 @@ const QuizBackground = styled.div`
   background-image: url(${({ backgroundImage }) => backgroundImage});
   background-color: ${({ theme }) => theme.colors.mainBg};
   @media screen and (max-width: 500px) {
-    width: 100%;
+    width: 100vw;
+    height: 100vh;
     overflow: hidden;
     background-size: cover;
     background-position: center;
