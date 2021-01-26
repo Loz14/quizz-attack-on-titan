@@ -23,7 +23,7 @@ export const QuizContainer = styled.div`
   margin: auto 10%;
   @media screen and (max-width: 500px) {
     margin: auto;
-    padding: 25px;
+    padding: 15px;
   }
 `;
 
