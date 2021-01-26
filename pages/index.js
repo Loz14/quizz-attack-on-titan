@@ -46,7 +46,7 @@ const Home = () => {
     }
   }, []);
   
-  const imageUrl = windowWidth >= 650 ? db.bg : db.bgMobile;
+  const imageUrl = windowWidth >= 800 ? db.bg : db.bgMobile;
   
   return (
     <QuizBackground backgroundImage={imageUrl}>
