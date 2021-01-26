@@ -1,10 +1,11 @@
-import styled from 'styled-components'
+import Head from 'next/head';
+import styled from 'styled-components';
+import Footer from '../components/Footer';
+import GitHubCorner from '../components/GitHubCorner';
+import QuizBackground from '../components/QuizBackground';
+import QuizLogo from '../components/QuizLogo';
+import Widget from '../components/Widget';
 import db from '../db.json';
-import Widget from '../components/Widget'
-import QuizLogo from '../components/QuizLogo'
-import QuizBackground from '../components/QuizBackground'
-import Footer from '../components/Footer'
-import GitHubCorner from '../components/GitHubCorner'
 
 // const BackgroundImage = styled.div`
 //   background-image: url(${db.bg});
@@ -27,6 +28,12 @@ export const QuizContainer = styled.div`
 export default function Home() {
   return (
     <QuizBackground backgroundImage={db.bg}>
+      <Head>
+        <title>Quizz AOT</title>
+        <link rel="shortcut icon" href="/static/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png" />
+      </Head>
       <QuizContainer>
         <QuizLogo />
         <Widget>
