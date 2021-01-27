@@ -6,6 +6,8 @@ import QuizLogo from '../src/components/QuizLogo';
 import QuizBackground from '../src/components/QuizBackground';
 import QuizContainer from '../src/components/QuizContainer';
 import Button from '../src/components/Button';
+import { DualRing } from 'react-awesome-spinners'
+
 
 const LoadingWidget = () => {
   return (
@@ -15,7 +17,9 @@ const LoadingWidget = () => {
       </Widget.Header>
 
       <Widget.Content>
-        [Desafio do Loading]
+        <div style={{textAlign: 'center'}}>
+          <DualRing color={db.theme.colors.primary}/>
+        </div>
       </Widget.Content>
     </Widget>
   );
@@ -111,7 +115,7 @@ const QuizPage = () => {
     setTimeout(() => {
       setScreenState(screenStates.QUIZ);
     }, 1 * 1000);
-  // nasce === didMount
+    // nasce === didMount
   }, []);
 
   const handleSubmitQuiz = () => {
