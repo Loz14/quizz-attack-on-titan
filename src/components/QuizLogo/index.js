@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Logo({ className }) {
+const Logo = ({ className }) => {
   return (
     <svg className={className} width="135" height="67" viewBox="0 0 135 67" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g clipPath="url(#clip0)">

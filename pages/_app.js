@@ -30,7 +30,7 @@ const GlobalStyle = createGlobalStyle`
 const { theme } = db;
 
 // eslint-disable-next-line react/prop-types
-export default function App({ Component, pageProps }) {
+const App = ({ Component, pageProps }) => {
   return (
     <>
       <Head>
@@ -45,3 +45,5 @@ export default function App({ Component, pageProps }) {
     </>
   );
 }
+
+export default App;

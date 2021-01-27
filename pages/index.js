@@ -2,12 +2,16 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import React from 'react';
 import styled from 'styled-components';
+
 import db from '../db.json';
 import Footer from '../src/components/Footer';
 import GitHubCorner from '../src/components/GitHubCorner';
 import QuizBackground from '../src/components/QuizBackground';
 import QuizLogo from '../src/components/QuizLogo';
 import Widget from '../src/components/Widget';
+import Button from '../src/components/Button';
+import QuizContainer from '../src/components/QuizContainer'
+import InputBase from "../src/components/Input";
 
 // const BackgroundImage = styled.div`
 //   background-image: url(${db.bg});
@@ -16,28 +20,15 @@ import Widget from '../src/components/Widget';
 //   background-position: center;
 // `;
 
-export const QuizContainer = styled.div`
-  width: 100%;
-  max-width: 350px;
-  padding-top: 45px;
-  margin: auto 10%;
-  @media screen and (max-width: 500px) {
-    margin: auto;
-    padding: 15px;
-  }
-`;
-
 const Home = () => {
   const router = useRouter();
   const [name, setName] = React.useState('');
-    
+
   return (
     <QuizBackground backgroundImage={db.bg} backgroundImageMobile={db.bgMobile}>
       <Head>
         <title>Quizz AOT</title>
         <link rel="shortcut icon" href="/static/favicon.ico" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png" />
       </Head>
       <QuizContainer>
         <QuizLogo />
@@ -46,24 +37,21 @@ const Home = () => {
             <h1>{db.title}</h1>
           </Widget.Header>
           <Widget.Content>
-            <form onSubmit={function (infosDoEvento) {
+            <form onSubmit={(infosDoEvento) => {
               infosDoEvento.preventDefault();
               router.push(`/quiz?name=${name}`);
               console.log('Fazendo uma submissão por meio do react');
             }}
             >
-              <input
-                onChange={function (infosDoEvento) {
-                  console.log(infosDoEvento.target.value);
-                  // State
-                  // name = infosDoEvento.target.value;
-                  setName(infosDoEvento.target.value);
-                }}
+              <InputBase
+                name="nomeDoUsuario"
+                onChange={(infosDoEvento) => setName(infosDoEvento.target.value)}
                 placeholder="Diz ai seu nome"
+                value={name}
               />
-              <button type="submit" disabled={name.length === 0}>
+              <Button type="submit" disabled={name.length === 0}>
                 Jogar
-              </button>
+              </Button>
             </form>
           </Widget.Content>
         </Widget>
