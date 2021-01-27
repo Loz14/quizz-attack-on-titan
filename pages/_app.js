@@ -12,7 +12,6 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     /* New styles */
     display: flex;
-    overflow: hidden;
     flex-direction: column;
     font-family: 'Lato', sans-serif;
     // Deixa branco no começo
