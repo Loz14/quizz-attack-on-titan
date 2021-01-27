@@ -111,7 +111,7 @@ const QuizPage = () => {
   }
 
   return (
-    <QuizBackground backgroundImage={db.bg}>
+    <QuizBackground backgroundImage={db.bg} backgroundImageMobile={db.bgMobile}>
       <QuizContainer>
         <QuizLogo />
         {screenState === screenStates.QUIZ && (

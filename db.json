@@ -7,12 +7,12 @@
       {
         "image": "https://media1.giphy.com/media/SmwsaXanCdOxy/giphy.gif?cid=ecf05e47xq4f48299ztdfewhqjs6bfa6c9uoidfplfu5minc&rid=giphy.gif",
         "title": "Qual o sobrenome do lendário Levi?",
-        "description": "Sobrenome carrega um o título de clã dentro do !",
-        "answer": 2,
+        "description": "Sobrenome carrega um o título de clã dentro do anime!",
+        "answer": 1,
         "alternatives": [
           "Yeager",
-          "Fritz",
           "Ackerman",
+          "Fritz",
           "Reiss"
         ]
       },
