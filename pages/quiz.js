@@ -6,24 +6,7 @@ import QuizLogo from '../src/components/QuizLogo';
 import QuizBackground from '../src/components/QuizBackground';
 import QuizContainer from '../src/components/QuizContainer';
 import Button from '../src/components/Button';
-import { DualRing } from 'react-awesome-spinners'
-
-
-const LoadingWidget = () => {
-  return (
-    <Widget>
-      <Widget.Header>
-        Carregando...
-      </Widget.Header>
-
-      <Widget.Content>
-        <div style={{textAlign: 'center'}}>
-          <DualRing color={db.theme.colors.primary}/>
-        </div>
-      </Widget.Content>
-    </Widget>
-  );
-}
+import LoadingWidget from '../src/components/Loading'
 
 const QuestionWidget = ({
   question,
