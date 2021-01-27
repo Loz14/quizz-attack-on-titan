@@ -9,7 +9,6 @@ import GitHubCorner from '../src/components/GitHubCorner';
 import QuizBackground from '../src/components/QuizBackground';
 import QuizLogo from '../src/components/QuizLogo';
 import Widget from '../src/components/Widget';
-import Head from '../src/components/Head';
 import Button from '../src/components/Button';
 import QuizContainer from '../src/components/QuizContainer'
 import InputBase from "../src/components/Input";

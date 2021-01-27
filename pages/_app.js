@@ -1,6 +1,6 @@
 import React from 'react';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
-import Head from '../src/components/Head';
+import NextHead from '../src/components/Head';
 import db from '../db.json';
 
 const GlobalStyle = createGlobalStyle`
@@ -33,7 +33,7 @@ const { theme } = db;
 const App = ({ Component, pageProps }) => {
   return (
     <>
-      <Head title={db.title} image={db.bg} description={db.description} />
+      <NextHead title={db.title} image={db.bg} description={db.description} />
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         {/* eslint-disable-next-line react/jsx-props-no-spreading */}
