@@ -9,6 +9,7 @@ import GitHubCorner from '../src/components/GitHubCorner';
 import QuizBackground from '../src/components/QuizBackground';
 import QuizLogo from '../src/components/QuizLogo';
 import Widget from '../src/components/Widget';
+import Head from '../src/components/Head';
 import Button from '../src/components/Button';
 import QuizContainer from '../src/components/QuizContainer'
 import InputBase from "../src/components/Input";
@@ -26,10 +27,6 @@ const Home = () => {
 
   return (
     <QuizBackground backgroundImage={db.bg} backgroundImageMobile={db.bgMobile}>
-      <Head>
-        <title>Quizz AOT</title>
-        <link rel="shortcut icon" href="/static/favicon.ico" />
-      </Head>
       <QuizContainer>
         <QuizLogo />
         <Widget>
