@@ -18,12 +18,15 @@
       },
       {
         "image": "https://media0.giphy.com/media/l0Iyoy5VglR6QKJiw/giphy.gif?cid=ecf05e47t4hu5fu0e5at7chwfm0jn6fefy3ew1eq7cg0uq7x&rid=giphy.gif",
-        "title": "Quais são todos titãns considerados lendários?",
+        "title": "Existem quantos titãns especiais?",
         "description": "",
-        "answer": 0,
+        "answer": 2,
         "alternatives": [
-           "background: linear-gradient(#e66465, #9198e5);",
-           "background: gradient(#e66465, #9198e5);"
+           "5",
+           "7",
+           "9",
+           "10",
+           "6"
         ]
       }
     ],
