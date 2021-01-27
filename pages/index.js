@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import db from '../db.json';
 import Footer from '../src/components/Footer';
@@ -30,26 +30,9 @@ export const QuizContainer = styled.div`
 const Home = () => {
   const router = useRouter();
   const [name, setName] = React.useState('');
-  const [windowWidth, setWindowWidth] = useState(0);
-  
-  React.useEffect(() => {
-    setWindowWidth(window.innerHeight);
     
-    const handleWindowResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-    
-    window.addEventListener('resize', handleWindowResize);
-    
-    return () => {
-      window.removeEventListener('resize', handleWindowResize);
-    }
-  }, []);
-  
-  const imageUrl = windowWidth >= 800 ? db.bg : db.bgMobile;
-  
   return (
-    <QuizBackground backgroundImage={imageUrl}>
+    <QuizBackground backgroundImage={db.bg} backgroundImageMobile={db.bgMobile}>
       <Head>
         <title>Quizz AOT</title>
         <link rel="shortcut icon" href="/static/favicon.ico" />

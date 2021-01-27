@@ -16,8 +16,8 @@ const QuizBackground = styled.div`
     background-size: cover;
     background-position: center;
     background-color: ${({ theme }) => theme.colors.mainBg};
-    background-image: url(https://fsa.zobj.net/crop.php?r=jUKrDc9yC5TGBB4VeN7k8RKhL24PvkDlzE2WS5rFOBAxq6hOVJW7AcZ4-pkhCL-72X4L7C6TAKO0ipAEUYeNGNdgLjRvWOVra0Yu-80b0MtK3Z0J3-jqlmqPCdz69W7MThbjXetO0iafytoI);
-  flex: 1;
+    background-image: url(${({ backgroundImageMobile }) => backgroundImageMobile});
+    flex: 1;
     *:first-child {
       position: relative;
       z-index: 10;
