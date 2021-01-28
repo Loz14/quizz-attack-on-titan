@@ -1,17 +1,15 @@
-import Head from 'next/head';
 import { useRouter } from 'next/router';
 import React from 'react';
-import styled from 'styled-components';
-
 import db from '../db.json';
+import Button from '../src/components/Button';
 import Footer from '../src/components/Footer';
 import GitHubCorner from '../src/components/GitHubCorner';
+import InputBase from "../src/components/Input";
 import QuizBackground from '../src/components/QuizBackground';
+import QuizContainer from '../src/components/QuizContainer';
 import QuizLogo from '../src/components/QuizLogo';
 import Widget from '../src/components/Widget';
-import Button from '../src/components/Button';
-import QuizContainer from '../src/components/QuizContainer'
-import InputBase from "../src/components/Input";
+
 
 // const BackgroundImage = styled.div`
 //   background-image: url(${db.bg});
