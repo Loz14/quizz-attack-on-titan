@@ -20,7 +20,7 @@ function Head({ title, image, description }) {
 
       <meta charSet="utf-8" />
       
-      <link rel="shortcut icon" href="/static/favicon.ico" />
+      <link rel="shortcut icon" href="../../../public/static/favicon.ico" />
       <link rel="canonical" href="https://quizz-attack-on-titan.vercel.app/" />
       <link rel="preconnect" href="https://fonts.gstatic.com" />
       <link
