@@ -19,10 +19,15 @@ function Head({ title, image, description }) {
       <meta property="og:type" content="website" />
 
       <meta charSet="utf-8" />
-      
-      <link rel="shortcut icon" href="../../../public/static/favicon.ico" />
+
       <link rel="canonical" href="https://quizz-attack-on-titan.vercel.app/" />
       <link rel="preconnect" href="https://fonts.gstatic.com" />
+      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+      <link rel="manifest" href="/site.webmanifest" />
+      <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+      <meta name="theme-color" content="#ffffff" />
       <link
         href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
         rel="stylesheet"
