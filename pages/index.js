@@ -61,7 +61,7 @@ const Home = () => {
                 if (index < 5) {
                   return (
                     <li key={`link__${link}`}>
-                      <a href={link} target="_blank">{link}</a>
+                      <a style={{color: '#fff'}} href={link} target="_blank">{link}</a>
                     </li>
                   )
                 }
