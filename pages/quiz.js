@@ -8,6 +8,7 @@ import QuizContainer from '../src/components/QuizContainer';
 import Button from '../src/components/Button';
 import LoadingWidget from '../src/components/Loading';
 import ResultWidget from '../src/components/Result';
+import AlternativesForm from '../src/components/AlternativesForm';
 
 
 const QuestionWidget = ({
@@ -47,7 +48,7 @@ const QuestionWidget = ({
           {question.description}
         </p>
 
-        <form
+        <AlternativesForm
           onSubmit={(infosDoEvento) => {
             infosDoEvento.preventDefault();
             setIsQuestionSubmitted(true)
@@ -61,10 +62,14 @@ const QuestionWidget = ({
         >
           {question.alternatives.map((alternative, alternativeIndex) => {
             const alternativeId = `alternative__${alternativeIndex}`;
+            const alternativeStatus = isCorrect ? 'SUCCESS' : 'ERROR';
+            const isSelected = selectedAlternative === alternativeIndex
             return (
               <Widget.Topic
                 as="label"
                 htmlFor={alternativeId}
+                data-selected={isSelected}
+                data-status={isQuestionSubmitted && alternativeStatus}
               >
                 <input
                   // style={{ display: 'none' }}
@@ -83,7 +88,7 @@ const QuestionWidget = ({
           </Button>
           {isQuestionSubmitted && isCorrect && <p>Você acertou!</p>}
           {isQuestionSubmitted && !isCorrect && <p>Você errou!</p>}
-        </form>
+        </AlternativesForm>
       </Widget.Content>
     </Widget>
   );

@@ -31,7 +31,10 @@
       }
     ],
     "external": [
-      ""
+      "https://quiz.dgsdev.vercel.app/",
+      "https://aluraquiz-base.silsantana.vercel.app/",
+      "https://aluraquiz-javascript.hmontarroyos.vercel.app/",
+      "https://horror-quiz.vercel.app/"
     ],
     "theme": {
       "colors": {

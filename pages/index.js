@@ -56,7 +56,18 @@ const Home = () => {
           <Widget.Content>
             <h1>Quizes da Galera</h1>
 
-            <p>lorem ipsum dolor sit amet...</p>
+            <ul>
+              {db.external.map((link, index) => {
+                if (index < 5) {
+                  return (
+                    <li key={`link__${link}`}>
+                      <a href={link} target="_blank">{link}</a>
+                    </li>
+                  )
+                }
+              }
+              )}
+            </ul>
           </Widget.Content>
         </Widget>
         <Footer />
