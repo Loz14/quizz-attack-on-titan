@@ -1,9 +1,10 @@
 
-import { DualRing } from 'react-awesome-spinners'
+import { useRouter } from 'next/router';
 import Widget from '../../components/Widget';
-import db from '../../../db.json'
 
 const ResultWidget = ({ results }) => {
+    const router = useRouter()
+    const { name } = router.query
     return (
         <Widget>
             <Widget.Header>
@@ -11,7 +12,7 @@ const ResultWidget = ({ results }) => {
         </Widget.Header>
 
             <Widget.Content>
-                <p>Você acertou {results.filter((x) => x).length} perguntas</p>
+                <p>Parabéns {name}, você acertou {results.filter((x) => x).length} perguntas!</p>
             </Widget.Content>
         </Widget>
     );
