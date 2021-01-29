@@ -58,9 +58,9 @@
   ],
   "external": [
     "https://quiz.dgsdev.vercel.app/",
-    "https://aluraquiz-base.silsantana.vercel.app/",
-    "https://aluraquiz-javascript.hmontarroyos.vercel.app/",
-    "https://horror-quiz.vercel.app/"
+    "https://aluraquiz-css.omariosouto.vercel.app/",
+    "https://aluraquiz-devsoutinho.omariosouto.vercel.app/",
+    "https://curso-alura-imersao-react2.gpd38.vercel.app/"
   ],
   "theme": {
     "colors": {

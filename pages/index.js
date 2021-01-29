@@ -1,7 +1,9 @@
 import { useRouter } from 'next/router';
 import React from 'react';
 import db from '../db.json';
+import { motion } from 'framer-motion';
 import Button from '../src/components/Button';
+import Link from '../src/components/Link';
 import Footer from '../src/components/Footer';
 import GitHubCorner from '../src/components/GitHubCorner';
 import InputBase from "../src/components/Input";
@@ -22,11 +24,27 @@ const Home = () => {
   const router = useRouter();
   const [name, setName] = React.useState('');
 
+  const textoDoLink = (text) => {
+    return text
+      .replace(/\//g, '')
+      .replace('https:', '')
+      .replace('.vercel.app', '')
+      .split('.')
+  }
+
   return (
     <QuizBackground backgroundImage={db.bg} backgroundImageMobile={db.bgMobile}>
       <QuizContainer>
         <QuizLogo />
-        <Widget>
+        <Widget
+        as={motion.section}
+        transition={{ delay: 0.5, duration: 0.5 }}
+        variants={{
+          show: { opacity: 1 },
+          hidden: { opacity: 0 },
+        }}
+        initial="hidden"
+        animate="show">
           <Widget.Header>
             <h1>{db.title}</h1>
           </Widget.Header>
@@ -50,25 +68,42 @@ const Home = () => {
           </Widget.Content>
         </Widget>
 
-        <Widget>
+        <Widget
+          as={motion.section}
+          transition={{ delay: 0.5, duration: 0.5 }}
+          variants={{
+            show: { opacity: 1 },
+            hidden: { opacity: 0 },
+          }}
+          initial="hidden"
+          animate="show">
           <Widget.Content>
             <h1>Quizes da Galera</h1>
 
             <ul>
-              {db.external.map((link, index) => {
-                if (index < 5) {
-                  return (
-                    <li key={`link__${link}`}>
-                      <a style={{color: '#fff'}} href={link} target="_blank">{link}</a>
-                    </li>
-                  )
-                }
+              {db.external.map((link) => {
+                const [projectName, gitHub] = textoDoLink(link)
+                return (
+                  <li key={`link__${link}`}>
+                    <Widget.Topic as={Link} href={`/quiz/${projectName}___${gitHub}`}>
+                      {`${gitHub}/${projectName}`}
+                    </Widget.Topic>
+                  </li>
+                )
               }
               )}
             </ul>
           </Widget.Content>
         </Widget>
-        <Footer />
+        <Footer
+          as={motion.footer}
+          transition={{ delay: 0.5, duration: 0.5 }}
+          variants={{
+            show: { opacity: 1 },
+            hidden: { opacity: 0 },
+          }}
+          initial="hidden"
+          animate="show" />
       </QuizContainer>
       <GitHubCorner projectUrl="https://github.com/oluizcarvalho" />
     </QuizBackground>
