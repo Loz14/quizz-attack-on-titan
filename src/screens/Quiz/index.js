@@ -165,7 +165,7 @@ const screenStates = {
   LOADING: 'LOADING',
   RESULT: 'RESULT',
 };
-export default function QuizPage({ externalQuestions, externalBg }) {
+export default function QuizPage({ externalQuestions, externalBg, externalBgMobile }) {
   const [screenState, setScreenState] = React.useState(screenStates.LOADING);
   const [results, setResults] = React.useState([]);
   const [currentQuestion, setCurrentQuestion] = React.useState(0);
@@ -173,6 +173,7 @@ export default function QuizPage({ externalQuestions, externalBg }) {
   const question = externalQuestions[questionIndex];
   const totalQuestions = externalQuestions.length;
   const bg = externalBg;
+  const bgMobile = externalBgMobile
 
   function addResult(result) {
     // results.push(result);
@@ -204,7 +205,7 @@ export default function QuizPage({ externalQuestions, externalBg }) {
   }
 
   return (
-    <QuizBackground backgroundImage={bg}>
+    <QuizBackground backgroundImage={bg} backgroundImageMobile={bgMobile}>
       <QuizContainer>
         <QuizLogo />
         {screenState === screenStates.QUIZ && (
