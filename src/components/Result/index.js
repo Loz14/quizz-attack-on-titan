@@ -1,9 +1,13 @@
 
 import { useRouter } from 'next/router';
 import Widget from '../../components/Widget';
+import { Lottie } from '@crello/react-lottie';
+import starsAnimation from '../../screens/Quiz/animations/starts.json'
+import sadAnimation from '../../screens/Quiz/animations/sad.json'
 
 const ResultWidget = ({ results }) => {
     const router = useRouter()
+    const acertos = results.filter((x) => x).length;
     const { name } = router.query
     return (
         <Widget>
@@ -12,12 +16,15 @@ const ResultWidget = ({ results }) => {
         </Widget.Header>
 
             <Widget.Content>
-                <img style={{
-                    display: 'block',
-                    maxWidth: '207px',
-                    margin: '0 auto 30px'}} src="https://dl.dropboxusercontent.com/s/e1t2hhowjcrs7f5/100daysui_100icon.png" alt="Trophy" />
+                <Lottie
+                    width="284px"
+                    height="300px"
+                    className="lottie-container basic"
+                    config={{ animationData: acertos > 2 ? starsAnimation : sadAnimation, loop: true, autoplay: true }}
+                />
                 <br />
-                <p>Parabéns {name}, você acertou {results.filter((x) => x).length} perguntas!</p>
+                {acertos > 2 && <p>Parabéns {name}, você acertou {acertos} perguntas!</p> }
+                {acertos <= 2 && <p>Boa sorte na próxima {name}, você acertou {acertos} {acertos === 1 ? 'pergunta' : 'perguntas'}!</p> }
             </Widget.Content>
         </Widget>
     );

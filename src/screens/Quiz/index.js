@@ -9,48 +9,8 @@ import QuizContainer from '../../components/QuizContainer';
 import AlternativesForm from '../../components/AlternativesForm';
 import Button from '../../components/Button';
 import BackLinkArrow from '../../components/BackLinkArrow';
-
+import Result from '../../components/Result'
 import loadingAnimation from './animations/loading.json';
-
-function ResultWidget({ results }) {
-  return (
-    <Widget>
-      <Widget.Header>
-        Tela de Resultado:
-      </Widget.Header>
-
-      <Widget.Content>
-        <p>
-          Você acertou
-          {' '}
-          {/* {results.reduce((somatoriaAtual, resultAtual) => {
-            const isAcerto = resultAtual === true;
-            if (isAcerto) {
-              return somatoriaAtual + 1;
-            }
-            return somatoriaAtual;
-          }, 0)} */}
-          {results.filter((x) => x).length}
-          {' '}
-          perguntas
-        </p>
-        <ul>
-          {results.map((result, index) => (
-            <li key={`result__${index}`}>
-              #
-              {index + 1}
-              {' '}
-              Resultado:
-              {result === true
-                ? 'Acertou'
-                : 'Errou'}
-            </li>
-          ))}
-        </ul>
-      </Widget.Content>
-    </Widget>
-  );
-}
 
 function LoadingWidget() {
   return (
@@ -220,7 +180,7 @@ export default function QuizPage({ externalQuestions, externalBg, externalBgMobi
 
         {screenState === screenStates.LOADING && <LoadingWidget />}
 
-        {screenState === screenStates.RESULT && <ResultWidget results={results} />}
+        {screenState === screenStates.RESULT && <Result results={results} />}
       </QuizContainer>
     </QuizBackground>
   );
