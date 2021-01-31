@@ -11,6 +11,8 @@ import Button from '../../components/Button';
 import BackLinkArrow from '../../components/BackLinkArrow';
 import Result from '../../components/Result'
 import loadingAnimation from './animations/loading.json';
+import loadingButton from './animations/loadingButton.json';
+import loadingButtonOk from './animations/loadingButtonOk.json';
 
 function LoadingWidget() {
   return (
@@ -40,6 +42,7 @@ function QuestionWidget({
 }) {
   const [selectedAlternative, setSelectedAlternative] = React.useState(undefined);
   const [isQuestionSubmited, setIsQuestionSubmited] = React.useState(false);
+  const [isLoading, setIsLoading] = React.useState(false);
   const questionId = `question__${questionIndex}`;
   const isCorrect = selectedAlternative === question.answer;
   const hasAlternativeSelected = selectedAlternative !== undefined;
@@ -73,13 +76,17 @@ function QuestionWidget({
         <AlternativesForm
           onSubmit={(infosDoEvento) => {
             infosDoEvento.preventDefault();
-            setIsQuestionSubmited(true);
+            setIsLoading(true)
+            setTimeout(() => {
+              setIsQuestionSubmited(true);
+            }, 2 * 1000);
             setTimeout(() => {
               addResult(isCorrect);
+              setIsLoading(false)
               onSubmit();
               setIsQuestionSubmited(false);
               setSelectedAlternative(undefined);
-            }, 3 * 1000);
+            }, 4 * 1000);
           }}
         >
           {question.alternatives.map((alternative, alternativeIndex) => {
@@ -109,8 +116,16 @@ function QuestionWidget({
           {/* <pre>
             {JSON.stringify(question, null, 4)}
           </pre> */}
-          <Button type="submit" disabled={!hasAlternativeSelected}>
-            Confirmar
+          <Button style={{ maxHeight: '40px', display: 'block' }} type="submit" disabled={!hasAlternativeSelected}>
+            {!isLoading && <span>Confirmar</span>}
+            {isLoading &&
+              <Lottie
+                width="100%"
+                height="80px"
+                style={{ position: 'relative', top: '-30px' }}
+                config={{ animationData: isCorrect ? loadingButtonOk : loadingButton, loop: true, autoplay: true }}
+              />
+            }
           </Button>
           {isQuestionSubmited && isCorrect && <p>Você acertou!</p>}
           {isQuestionSubmited && !isCorrect && <p>Você errou!</p>}
@@ -152,7 +167,7 @@ export default function QuizPage({ externalQuestions, externalBg, externalBgMobi
     setTimeout(() => {
       setScreenState(screenStates.QUIZ);
     }, 1 * 2000);
-  // nasce === didMount
+    // nasce === didMount
   }, []);
 
   function handleSubmitQuiz() {

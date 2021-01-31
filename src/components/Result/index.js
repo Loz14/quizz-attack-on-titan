@@ -17,7 +17,7 @@ const ResultWidget = ({ results }) => {
 
             <Widget.Content>
                 <Lottie
-                    width="284px"
+                    width="100%"
                     height="300px"
                     className="lottie-container basic"
                     config={{ animationData: acertos > 2 ? starsAnimation : sadAnimation, loop: true, autoplay: true }}
