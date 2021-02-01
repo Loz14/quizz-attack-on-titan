@@ -23,8 +23,8 @@ const ResultWidget = ({ results }) => {
                     config={{ animationData: acertos > 2 ? starsAnimation : sadAnimation, loop: true, autoplay: true }}
                 />
                 <br />
-                {acertos > 2 && <p>Parabéns {name}, você acertou {acertos} perguntas!</p> }
-                {acertos <= 2 && <p>Boa sorte na próxima {name}, você acertou {acertos} {acertos === 1 ? 'pergunta' : 'perguntas'}!</p> }
+                {acertos > 2 && <p>Parabéns {name}, você acertou {acertos} perguntas de {results.length}!</p> }
+                {acertos <= 2 && <p>Boa sorte na próxima {name}, você acertou {acertos} {acertos === 1 ? 'pergunta' : 'perguntas'} de {results.length}!</p> }
             </Widget.Content>
         </Widget>
     );

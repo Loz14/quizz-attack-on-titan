@@ -7,7 +7,7 @@
     {
       "image": "https://media1.giphy.com/media/SmwsaXanCdOxy/giphy.gif?cid=ecf05e47xq4f48299ztdfewhqjs6bfa6c9uoidfplfu5minc&rid=giphy.gif",
       "title": "Qual o sobrenome do lendário Levi?",
-      "description": "Sobrenome carrega um o título de clã dentro do anime!",
+      "description": "Sobrenome carrega o título de clã dentro do anime!",
       "answer": 1,
       "alternatives": [
         "Yeager",
@@ -17,8 +17,8 @@
       ]
     },
     {
-      "image": "https://media0.giphy.com/media/l0Iyoy5VglR6QKJiw/giphy.gif?cid=ecf05e47t4hu5fu0e5at7chwfm0jn6fefy3ew1eq7cg0uq7x&rid=giphy.gif",
-      "title": "Existem quantos titãns especiais?",
+      "image": "https://media.giphy.com/media/xUPGcIJKL7XnQSW2vC/giphy.gif",
+      "title": "Existem quantos Titãns especiais?",
       "description": "",
       "answer": 2,
       "alternatives": [
@@ -31,7 +31,7 @@
     },
     {
       "image": "https://media1.tenor.com/images/009f5e59cc079d02b957fa22ba07a79a/tenor.gif?itemid=20004845",
-      "title": "Qual família possuía a posse do titã martelo?",
+      "title": "Qual família possuía a posse do Titã martelo?",
       "description": "",
       "answer": 1,
       "alternatives": [
@@ -43,16 +43,29 @@
       ]
     },
     {
-      "image": "https://media1.tenor.com/images/009f5e59cc079d02b957fa22ba07a79a/tenor.gif?itemid=20004845",
-      "title": "Qual família possuía a posse do titã martelo?",
+      "image": "https://media.giphy.com/media/3o7btQ8jDTPGDpgc6I/giphy.gif",
+      "title": "Quem foi o responsável pela captura do Titã colossal?",
+      "description": "",
+      "answer": 4,
+      "alternatives": [
+        "Eren Jaeger",
+        "Erwin",
+        "Jean",
+        "Levi Ackerman",
+        "Armin"
+      ]
+    },
+    {
+      "image": "https://media.giphy.com/media/Ku1FyPdoBXVg4/giphy.gif",
+      "title": "Quantos soldados da tropa de exploração sobraram depois da batalha de Shingashina?",
       "description": "",
       "answer": 0,
       "alternatives": [
-        "Família Tybur",
-        "Família Leonhart",
-        "Família Arlert",
-        "Família Real Fritz/Reiss",
-        "Clã Ackerman"
+        "9",
+        "104",
+        "10",
+        "98",
+        "121"
       ]
     }
   ],
