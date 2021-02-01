@@ -116,13 +116,13 @@ function QuestionWidget({
           {/* <pre>
             {JSON.stringify(question, null, 4)}
           </pre> */}
-          <Button style={{ maxHeight: '40px', display: 'block' }} type="submit" disabled={!hasAlternativeSelected}>
+          <Button style={{ height: '40px', display: 'block', zIndex: '2' }} type="submit" disabled={!hasAlternativeSelected}>
             {!isLoading && <span>Confirmar</span>}
             {isLoading &&
               <Lottie
                 width="100%"
                 height="80px"
-                style={{ position: 'relative', top: '-30px' }}
+                style={{ position: 'relative', top: '-30px', zIndex: '1' }}
                 config={{ animationData: isCorrect ? loadingButtonOk : loadingButton, loop: true, autoplay: true }}
               />
             }
